@@ -510,6 +510,13 @@ strong {
 .navbar-toggler .navbar-toggler-icon::after {
   top: 8px;
 }
+/* Disable text selection globally */
+* {
+  user-select: none; /* For most browsers */
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For Internet Explorer/Edge */
+}
 
 
 /*---------------------------------------

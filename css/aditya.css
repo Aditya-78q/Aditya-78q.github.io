@@ -552,19 +552,44 @@ strong {
   top: 70px;
 }
 
+/* Basic styling for the circular image container */
 .hero-image-wrap {
-  
-  border-radius: 100%;
-  width: 350px;
-  height: 350px;
+  border-radius: 50%; /* Circular shape */
+  width: 60vw; /* Responsive width: 60% of the viewport width */
+  height: 60vw; /* Same height as width to maintain the circle */
   position: absolute;
   z-index: 22;
   top: -50px;
   right: 0;
   left: 0;
   margin: auto;
-  pointer-events: none;
+  pointer-events: none; /* Prevent interaction with this element */
 }
+
+/* For larger screens (desktops, laptops) */
+@media (min-width: 1200px) {
+  .hero-image-wrap {
+    width: 350px; /* Fixed size for large screens */
+    height: 350px; /* Fixed height for the circle */
+  }
+}
+
+/* For tablets */
+@media (max-width: 991px) {
+  .hero-image-wrap {
+    width: 45vw; /* 45% of the viewport width for tablets */
+    height: 45vw; /* Maintain the 1:1 aspect ratio */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 576px) {
+  .hero-image-wrap {
+    width: 50vw; /* 50% of the viewport width for mobile */
+    height: 50vw; /* Maintain the 1:1 aspect ratio */
+  }
+}
+
 
 .hero-image {
   position: absolute;

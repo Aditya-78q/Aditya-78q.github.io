@@ -19,13 +19,13 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Detect Developer Tools opening by checking window size
+// Detect Developer Tools opening by checking window size (for desktop)
 (function() {
     var threshold = 160;  // Minimum width for developer tools to be opened
     setInterval(function() {
         var width = window.outerWidth - window.innerWidth;
         if (width > threshold) {
-            alert("Developer tools detected!");
+            alert("Developer tools detected! Access denied.");
             // Optionally, redirect or disable functionality (e.g., location.href = 'https://example.com';)
         }
     }, 1000);
@@ -44,20 +44,38 @@ document.onkeydown = function(e) {
     }
 };
 
-// Disable access to developer tools in mobile mode
+// Detect and block Developer Tools on mobile devices (without relying on window resizing)
 (function() {
     var isMobile = /Mobi|Android/i.test(navigator.userAgent);  // Check if the device is mobile
-    var threshold = 160;  // Minimum width for developer tools to be opened
-
-    // Check window dimensions and prevent developer tools in mobile mode
+    var devToolsAlert = "Developer tools are not accessible on mobile devices.";
+    
     if (isMobile) {
-        setInterval(function() {
-            var width = window.outerWidth - window.innerWidth;
-            if (width > threshold) {
-                alert("Developer tools are not accessible on mobile devices.");
-                // Optionally redirect or block access
-                // location.href = 'https://example.com';  // Redirect to another page
+        // Block developer tools directly on mobile
+        document.addEventListener('touchstart', function() {
+            // Check for specific touch events related to the mobile dev tools.
+            alert(devToolsAlert);
+            // Optionally, redirect or block functionality (e.g., location.href = 'https://example.com';)
+        });
+
+        // Additional fallback for keyboard shortcuts on mobile if possible
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode === 123) { // F12
+                alert(devToolsAlert);
+                event.preventDefault();
             }
-        }, 1000);
+            if (event.ctrlKey && event.shiftKey && event.keyCode === 73) { // Ctrl+Shift+I
+                alert(devToolsAlert);
+                event.preventDefault();
+            }
+        });
     }
 })();
+
+// Block mouse events for mobile to prevent inspection via external mobile tools
+document.addEventListener('mousedown', function(event) {
+    var isMobile = /Mobi|Android/i.test(navigator.userAgent);  // Check for mobile
+    if (isMobile) {
+        alert("Developer tools are blocked on mobile.");
+        event.preventDefault();
+    }
+});

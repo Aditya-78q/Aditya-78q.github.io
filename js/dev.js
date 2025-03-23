@@ -43,3 +43,21 @@ document.onkeydown = function(e) {
         return false; // Disable Ctrl+Shift+I (Developer Tools)
     }
 };
+
+// Disable access to developer tools in mobile mode
+(function() {
+    var isMobile = /Mobi|Android/i.test(navigator.userAgent);  // Check if the device is mobile
+    var threshold = 160;  // Minimum width for developer tools to be opened
+
+    // Check window dimensions and prevent developer tools in mobile mode
+    if (isMobile) {
+        setInterval(function() {
+            var width = window.outerWidth - window.innerWidth;
+            if (width > threshold) {
+                alert("Developer tools are not accessible on mobile devices.");
+                // Optionally redirect or block access
+                // location.href = 'https://example.com';  // Redirect to another page
+            }
+        }, 1000);
+    }
+})();

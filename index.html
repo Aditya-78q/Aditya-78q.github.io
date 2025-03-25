@@ -168,80 +168,100 @@
             </div>
         </section>
 
-        <section class="profile-section py-6">
-            <div class="container mt-4">
-                <div class="row justify-content-center">
-                    <!-- Left Column (Personal Information) -->
-                    <div class="col-lg-6 col-md-8 col-sm-10 col-12">
-                        <div class="card shadow-sm rounded">
-                            <div class="card-body">
-                                <h4 class="card-title mb-3">Information</h4>
-                                <p><strong>Name:</strong> Reddy Aditya Pavan Kumar</p>
-                                <p><strong>Birthday:</strong> Jun 15, 2003</p>
-                                <p><strong>Email:</strong> <a href="mailto:redyaditya456@gmail.com">redyaditya456@gmail.com</a></p>
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <!-- Left Column (Personal Information) -->
+                <div class="col-lg-6 col-md-8 col-sm-10 col-12">
+                    <div class="card shadow-sm rounded">
+                        <div class="card-body">
+                            <h4 class="card-title mb-3">Information</h4>
+                            <div class="row">
+                                <!-- Left Column: Labels -->
+                                <div class="col-6">
+                                    <p><strong>Name:</strong></p>
+                                    <p><strong>Birthday:</strong></p>
+                                    <p><strong>Email:</strong></p>
+                                </div>
+                                <!-- Right Column: Values -->
+                                <div class="col-6">
+                                    <p>Reddy Aditya Pavan Kumar</p>
+                                    <p>Jun 15, 2003</p>
+                                    <p><a href="mailto:redyaditya456@gmail.com">redyaditya456@gmail.com</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        
             
         
             <!-- Right Column (Featured Stats) -->
              <center>
-            <div class="container mt-5">
-                <div class="col-lg-6 col-12">
-                    <div class="about-thumb">
-                        <!-- Link to Font Awesome for icons -->
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-                        
-                        <table style="width: 100%; border-collapse: collapse;">
-                            <tr>
-                                <th style="padding: 10px; border-bottom: 1px solid #ccc; text-align: center;">Degree</th>
-                                <th style="padding: 10px; border-bottom: 1px solid #ccc; text-align: center;">Institution</th>
-                                <th style="padding: 10px; border-bottom: 1px solid #ccc; text-align: center;">Percentage</th>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border-bottom: 1px solid #ccc; text-align: center;">
-                                    <i class="fas fa-laptop-code" style="font-size: 2em; color: #4CAF50;"></i>
-                                    <p><strong class="featured-numbers">B.Tech</strong></p>
-                                </td>
-                                <td style="padding: 10px; border-bottom: 1px solid #ccc;">
-                                    <p class="featured-text">Computer Science engg in VSM college of Engineering</p>
-                                </td>
-                                <td style="padding: 10px; border-bottom: 1px solid #ccc; text-align: center;">
-                                    <p class="featured-text">85%</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border-bottom: 1px solid #ccc; text-align: center;">
-                                    <i class="fas fa-book-open" style="font-size: 2em; color: #2196F3;"></i>
-                                    <p><strong class="featured-numbers">Inter</strong></p>
-                                </td>
-                                <td style="padding: 10px; border-bottom: 1px solid #ccc;">
-                                    <p class="featured-text">M.P.C in Aditya Junior College</p>
-                                </td>
-                                <td style="padding: 10px; border-bottom: 1px solid #ccc; text-align: center;">
-                                    <p class="featured-text">90%</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border-bottom: 1px solid #ccc; text-align: center;">
-                                    <i class="fas fa-school" style="font-size: 2em; color: #FF9800;"></i>
-                                    <p><strong class="featured-numbers">SSC</strong></p>
-                                </td>
-                                <td style="padding: 10px; border-bottom: 1px solid #ccc;">
-                                    <p class="featured-text">Aditya Talent School</p>
-                                </td>
-                                <td style="padding: 10px; border-bottom: 1px solid #ccc; text-align: center;">
-                                    <p class="featured-text">95%</p>
-                                </td>
-                            </tr>
-                        </table>
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-md-10 col-sm-12">
+                            <div class="about-thumb">
+                                <!-- Content Box with Border and Padding -->
+                                <div class="p-4 rounded shadow" style="background-color: #ffffff;">
+                                    <!-- Link to Font Awesome for icons -->
+                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+                                    
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th style="width: 25%;">Degree</th>
+                                                <th style="width: 50%;">Institution</th>
+                                                <th style="width: 25%;">Percentage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr> <!-- B.Tech row without dark shade -->
+                                                <td class="text-center">
+                                                    <i class="fas fa-laptop-code" style="font-size: 2em; color: #4CAF50;"></i>
+                                                    <p><strong class="featured-numbers">B.Tech</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p class="featured-text">CSE in VSM college of Engineering</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p class="featured-text">85%</p>
+                                                </td>
+                                            </tr>
+                                            <tr> <!-- Inter row -->
+                                                <td class="text-center">
+                                                    <i class="fas fa-book-open" style="font-size: 2em; color: #2196F3;"></i>
+                                                    <p><strong class="featured-numbers">Inter</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p class="featured-text">M.P.C in Aditya Junior College</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p class="featured-text">90%</p>
+                                                </td>
+                                            </tr>
+                                            <tr> <!-- SSC row without dark shade -->
+                                                <td class="text-center">
+                                                    <i class="fas fa-school" style="font-size: 2em; color: #FF9800;"></i>
+                                                    <p><strong class="featured-numbers">SSC</strong></p>
+                                                </td>
+                                                <td>
+                                                    <p class="featured-text">Aditya Talent School</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p class="featured-text">95%</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </center>
-        </section>
+                
+            </center>                
 
 
 
